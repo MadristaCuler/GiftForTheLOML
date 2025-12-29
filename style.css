@@ -94,7 +94,7 @@ body {
 #soundBtn {
     position: fixed;
     right: 20px;
-    top: 75%;
+    top: 30%; /* Upper half for mobile */
     font-size: 2rem;
     cursor: pointer;
     user-select: none;
