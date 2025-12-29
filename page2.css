@@ -1,0 +1,36 @@
+.page2 {
+  position: relative;
+}
+
+/* Button container */
+.buttons {
+  position: absolute;
+  bottom: 25%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+
+/* Buttons */
+.btn {
+  width: 120px;
+  padding: 14px 0;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* NO button */
+.btn.no {
+  background: #e53935;
+  color: white;
+}
+
+/* YES button */
+.btn.yes {
+  background: #43a047;
+  color: white;
+}
