@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Page 2</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Page 2 background */
+    .page2 {
+      position: relative;
+      background: url("images/bg2.jpg") no-repeat center center;
+      background-size: cover;
+    }
+
+    .decision-buttons {
+      position: absolute;
+      bottom: 25%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .decision-buttons a {
+      text-decoration: none;
+    }
+
+    .btn {
+      width: 120px;
+      padding: 14px 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn.yes {
+      background: #43a047;
+      color: white;
+    }
+
+    .btn.no {
+      background: #e53935;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app page2">
+
+    <!-- LOOPING AUDIO -->
+    <audio id="bgAudio" loop>
+      <source src="audio/bg.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="decision-buttons">
+      <!-- YES = LEFT -->
+      <a href="page3.html">
+        <button class="btn yes">YES</button>
+      </a>
+
+      <!-- NO = RIGHT -->
+      <a href="page4.html">
+        <button class="btn no">NO</button>
+      </a>
+    </div>
+
+  </div>
+
+  <script>
+    const audio = document.getElementById("bgAudio");
+
+    function playAudio() {
+      audio.currentTime = 0;
+      audio.play().catch(() => {});
+    }
+
+    // Play on normal load
+    window.addEventListener("load", playAudio);
+
+    // Play again when coming back (bfcache fix)
+    window.addEventListener("pageshow", playAudio);
+  </script>
+</body>
+</html>
