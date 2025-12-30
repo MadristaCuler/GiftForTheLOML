@@ -1,0 +1,42 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Full screen page */
+.page {
+  width: 100%;
+  height: 100vh;
+
+  background: url("images/bg7.jpg") no-repeat center center;
+  background-size: cover;
+
+  position: relative;
+}
+
+/* Bottom-centered button */
+.next-btn {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  padding: 14px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+
+  background: #0a2a66;
+  color: white;
+
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
