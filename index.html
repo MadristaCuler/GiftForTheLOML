@@ -5,40 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>New Year Countdown</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    /* 🔊 Button Styles */
-    #soundBtn {
-      position: fixed;
-      right: 20px;
-      top: 75%;
-      font-size: 2rem;
-      cursor: pointer;
-      user-select: none;
-      z-index: 1000;
-      transition: transform 0.2s, color 0.2s;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); color: #fff; }
-      50% { transform: scale(1.3); color: #1DB954; }
-      100% { transform: scale(1); color: #fff; }
-    }
-
-    .playing {
-      animation: pulse 1s infinite;
-    }
-  </style>
 </head>
 
 <body>
 
 <div class="app">
 
-  <!-- LOOPING BACKGROUND MUSIC -->
-  <audio id="bgm" loop>
-    <source src="audio/bgm.mp3" type="audio/mpeg">
-  </audio>
-
+  <!-- Countdown Timer -->
   <div class="timer">
     <div class="time">
       <div class="num" id="days">0</div>
@@ -58,43 +31,11 @@
     </div>
   </div>
 
+  <!-- Next Page Button -->
   <button id="nextBtn">Go to Next Page</button>
+
 </div>
 
-<!-- 🔊 Music Control Button -->
-<div id="soundBtn">🔊</div>
-
 <script src="script.js"></script>
-
-<script>
-  const bgm = document.getElementById("bgm");
-  const soundBtn = document.getElementById("soundBtn");
-  let isPlaying = false;
-
-  soundBtn.addEventListener("click", () => {
-    if (!isPlaying) {
-      bgm.currentTime = 0; // start from beginning
-      bgm.play().catch(() => {});
-      isPlaying = true;
-      soundBtn.classList.add("playing");
-    } else {
-      if (!bgm.paused) {
-        bgm.pause();
-        soundBtn.classList.remove("playing");
-      } else {
-        bgm.currentTime = 0; // restart from beginning
-        bgm.play().catch(() => {});
-        soundBtn.classList.add("playing");
-      }
-    }
-  });
-
-  // Optional: make next page button work
-  const nextBtn = document.getElementById("nextBtn");
-  nextBtn.addEventListener("click", () => {
-    window.location.href = "page2.html"; // change to your second page
-  });
-</script>
-
 </body>
 </html>
