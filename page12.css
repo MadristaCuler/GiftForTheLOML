@@ -41,8 +41,19 @@ html, body {
     border: none;
     border-radius: 12px;
     cursor: pointer;
+
+    opacity: 0; /* start hidden */
+    animation: fadeInBtn 1s ease forwards;
+    animation-delay: 2s; /* start after bg fade-in finishes */
 }
 
 #nextBtn:active {
     opacity: 0.8;
+}
+
+/* Button fade-in keyframes */
+@keyframes fadeInBtn {
+    to {
+        opacity: 1;
+    }
 }
