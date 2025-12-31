@@ -5,11 +5,6 @@ const minutesEl = document.getElementById("minutes");
 const secondsEl = document.getElementById("seconds");
 const nextBtn = document.getElementById("nextBtn");
 
-// Sound button & BGM
-const bgm = document.getElementById("bgm");
-const soundBtn = document.getElementById("soundBtn");
-let isPlaying = false;
-
 // Disable next button initially
 nextBtn.disabled = true;
 
@@ -48,23 +43,3 @@ function updateCountdown() {
 }
 
 updateCountdown();
-
-// 🔊 Sound button functionality
-soundBtn.addEventListener("click", () => {
-  if (!isPlaying) {
-    bgm.currentTime = 0; // start from beginning
-    bgm.play().catch(() => {});
-    isPlaying = true;
-    soundBtn.classList.add("playing");
-  } else {
-    if (!bgm.paused) {
-      bgm.pause();
-      soundBtn.classList.remove("playing");
-    } else {
-      bgm.currentTime = 0; // restart from beginning
-      bgm.play().catch(() => {});
-      soundBtn.classList.add("playing");
-    }
-  }
-});
-
