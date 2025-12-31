@@ -13,8 +13,8 @@ let isPlaying = false;
 // Disable next button initially
 nextBtn.disabled = true;
 
-// 1-minute test timer
-const target = new Date(Date.now() + 60000); // 60,000 ms = 1 minute
+// Countdown to New Year 2026
+const target = new Date("January 1, 2026 00:00:00");
 
 function updateCountdown() {
   const now = new Date();
@@ -67,3 +67,4 @@ soundBtn.addEventListener("click", () => {
     }
   }
 });
+
