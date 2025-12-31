@@ -17,46 +17,21 @@ html, body {
   height: 100vh;
   background: url("images/bg8.jpg") no-repeat center center;
   background-size: cover;
+
   position: relative;
-}
-
-/* Message block */
-.message {
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-
-  width: 90%;
-  max-width: 420px; /* keeps text from going too wide */
-
-  text-align: center;
-  color: black;
-
-  font-weight: 700;
-  font-size: clamp(1.8rem, 6.5vw, 3.2rem);
-  line-height: 1.25;
-
   opacity: 0;
+
+  animation: fadeInBg 2s ease forwards;
 }
 
-/* Fade in from left – 2 seconds */
-.fade-left {
-  animation: fadeLeft 2s ease-out forwards;
-}
-
-@keyframes fadeLeft {
-  from {
-    transform: translateX(-50%) translateX(-40px);
-    opacity: 0;
-  }
+/* Background fade-in */
+@keyframes fadeInBg {
   to {
-    transform: translateX(-50%) translateX(0);
     opacity: 1;
   }
 }
 
-/* Bottom button */
+/* Button */
 .next-btn {
   position: absolute;
   bottom: 24px;
